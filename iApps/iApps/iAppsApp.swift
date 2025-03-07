@@ -12,7 +12,9 @@ import SwiftUI
 struct iAppsApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationStack {
+                CategoriesListView()
+            }
         }
     }
 }
