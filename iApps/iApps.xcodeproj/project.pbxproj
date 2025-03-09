@@ -10,6 +10,7 @@
 		5B6F36292D79D780008A6D81 /* PhotoItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6F36282D79D77F008A6D81 /* PhotoItemView.swift */; };
 		5B6F36322D7B11B2008A6D81 /* PhotoDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6F36312D7B11B2008A6D81 /* PhotoDetailsView.swift */; };
 		5B6F36352D7DB45C008A6D81 /* UIView+EdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6F36342D7DB45B008A6D81 /* UIView+EdgeInsets.swift */; };
+		5B6F36442D7DC0F9008A6D81 /* AudioPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6F36432D7DC0F9008A6D81 /* AudioPlayerView.swift */; };
 		5BEEA80D2D7880D000898D72 /* iAppsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEEA80A2D7880D000898D72 /* iAppsApp.swift */; };
 		5BEEA80E2D7880D000898D72 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BEEA8062D7880D000898D72 /* Preview Assets.xcassets */; };
 		5BEEA80F2D7880D000898D72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BEEA8082D7880D000898D72 /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 		5B6F36282D79D77F008A6D81 /* PhotoItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoItemView.swift; sourceTree = "<group>"; };
 		5B6F36312D7B11B2008A6D81 /* PhotoDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsView.swift; sourceTree = "<group>"; };
 		5B6F36342D7DB45B008A6D81 /* UIView+EdgeInsets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+EdgeInsets.swift"; sourceTree = "<group>"; };
+		5B6F36432D7DC0F9008A6D81 /* AudioPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerView.swift; sourceTree = "<group>"; };
 		5B9F14732D786C15003E0E9A /* iApps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iApps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B9F14832D786C19003E0E9A /* iAppsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iAppsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B9F148D2D786C19003E0E9A /* iAppsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iAppsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,6 +120,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		5B6F36422D7DC0DC008A6D81 /* AudioPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				5B6F36432D7DC0F9008A6D81 /* AudioPlayerView.swift */,
+			);
+			path = AudioPlayer;
+			sourceTree = "<group>";
+		};
 		5B9F146A2D786C15003E0E9A = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +171,7 @@
 		5BEEA8102D7880D900898D72 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				5B6F36422D7DC0DC008A6D81 /* AudioPlayer */,
 				5B6F36302D7B119A008A6D81 /* PhotoDetails */,
 				5BEEA8112D78815000898D72 /* CategoriesList */,
 			);
@@ -368,6 +379,7 @@
 				5B6F36352D7DB45C008A6D81 /* UIView+EdgeInsets.swift in Sources */,
 				5BEEA8132D78819500898D72 /* CategoriesListView.swift in Sources */,
 				5BEEA81A2D7881F400898D72 /* CategoriesRowView.swift in Sources */,
+				5B6F36442D7DC0F9008A6D81 /* AudioPlayerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

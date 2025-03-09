@@ -9,13 +9,14 @@
 import SwiftUI
 
 struct PhotoDetailsView: View {
-    let photo: PhotoItem
-    
     @State private var scrollOffset: CGFloat = 0
     @State private var contentHeight: CGFloat = 1
     @State private var scrollViewHeight: CGFloat = 1
-    @State var safeAreaInsets: EdgeInsets = .init()
+    @State private var safeAreaInsets: EdgeInsets = .init()
+    @State private var showPlayer: Bool = false
     @Environment(\.dismiss) private var dismiss
+    
+    let photo: PhotoItem
     
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -85,6 +86,10 @@ struct PhotoDetailsView: View {
             
             // Floating Bottom Buttons
             VStack {
+                if showPlayer {
+                    AudioPlayerView()
+                        .transition(.move(edge: .bottom))
+                }
                 HStack {
                     Button(action: {
                         dismiss()
@@ -98,7 +103,11 @@ struct PhotoDetailsView: View {
                             .cornerRadius(12)
                     }
                     
-                    Button(action: {}) {
+                    Button(action: {
+                        withAnimation(.easeInOut(duration: 0.4)) {
+                            showPlayer.toggle()
+                        }
+                    }) {
                         Text("Audio")
                             .frame(maxWidth: .infinity)
                             .frame(height: 20)
@@ -108,9 +117,10 @@ struct PhotoDetailsView: View {
                             .cornerRadius(12)
                     }
                 }
+                .padding(.horizontal, 20)
+                .padding(.vertical, 10)
                 .background(.gray)
             }
-            .ignoresSafeArea(edges: [.bottom])
             .zIndex(3)
         }
         .safeAreaInsets($safeAreaInsets)
