@@ -11,6 +11,8 @@ import SwiftUI
 struct CategoriesRowView: View {
     var category: String
     var items: [PhotoItem]
+    @State private var isPresented = false
+    @State private var selectedItem: PhotoItem?
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -23,10 +25,14 @@ struct CategoriesRowView: View {
             ScrollView(.horizontal) {
                 HStack(spacing: 15) {
                     ForEach(items, id: \.id) { item in
-                        PhotoItemView(
-                            url: item.media.url,
-                            title: item.title
-                        )
+                        NavigationLink {
+                            PhotoDetailsView(photo: item)
+                        } label: {
+                            PhotoItemView(
+                                url: item.media.url,
+                                title: item.title
+                            )
+                        }
                     }
                 }
                 .padding(.horizontal, 10)
@@ -43,7 +49,11 @@ struct CategoriesRowView: View {
             PhotoItem(
                 title: "Photo",
                 media: PhotoItem.Media(url: "https://live.staticflickr.com/65535/54362646110_67bbc57689_m.jpg"),
-                author: "Author"
+                author: "Author",
+                authorId: "",
+                published: "",
+                dateTaken: "",
+                tags: ""
             )
         ]
     )

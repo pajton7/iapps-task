@@ -12,6 +12,20 @@ struct PhotoItem: Decodable {
     let title: String
     let media: Media
     let author: String
+    let authorId: String
+    let published: String
+    let dateTaken: String
+    let tags: String
+    
+    enum CodingKeys: String, CodingKey {
+        case title
+        case media
+        case author
+        case authorId = "author_id"
+        case published
+        case dateTaken = "date_taken"
+        case tags
+    }
     
     struct Media: Decodable {
         let url: String
