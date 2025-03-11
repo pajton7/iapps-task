@@ -14,7 +14,7 @@ struct CategoriesListView: View {
     var body: some View {
         ScrollView {
             VStack {
-                ForEach(viewModel.categoryPhotos.keys.sorted(), id: \.self) { category in
+                ForEach(Array(viewModel.categoryPhotos.keys), id: \.self) { category in
                     CategoriesRowView(category: category.capitalized, items: viewModel.categoryPhotos[category] ?? [])
                 }
             }
