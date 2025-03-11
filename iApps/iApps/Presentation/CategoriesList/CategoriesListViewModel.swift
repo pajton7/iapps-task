@@ -28,32 +28,6 @@ class CategoriesListViewModel: ObservableObject {
                 .eraseToAnyPublisher()
         }
         
-//        Publishers.MergeMany(publishers)
-//            .receive(on: DispatchQueue.main)
-//            .sink(receiveCompletion: { completion in
-//                if case .failure(let error) = completion {
-//                    print("Error fetching data: \(error)")
-//                }
-//            }, receiveValue: { [weak self] category, response in
-//                self?.categoryPhotos[category] = response.items
-//            })
-//            .store(in: &cancellables)
-//        Publishers.MergeMany(publishers)
-//                .collect() // Waits for all responses before updating categoryPhotos
-//                .receive(on: DispatchQueue.main)
-//                .sink(receiveCompletion: { completion in
-//                    if case .failure(let error) = completion {
-//                        print("Error fetching data: \(error)")
-//                    }
-//                }, receiveValue: { [weak self] results in
-//                    var newPhotos: [String: [PhotoItem]] = [:]
-//                    for (category, items) in results {
-//                        newPhotos[category] = items.items
-//                    }
-//                    self?.categoryPhotos = newPhotos
-//                })
-//                .store(in: &cancellables)
-        
         var receivedCount = 0
         
         Publishers.MergeMany(publishers)
